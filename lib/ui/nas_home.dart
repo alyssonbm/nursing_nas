@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nas/Class/paciente.dart';
+import 'package:nunsing_nas/Class/paciente.dart';
 import 'dart:io';
 
 class NasHome extends StatefulWidget {

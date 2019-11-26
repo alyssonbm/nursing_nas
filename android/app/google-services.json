@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "712971266338",
+    "firebase_url": "https://nursingnas.firebaseio.com",
+    "project_id": "nursingnas",
+    "storage_bucket": "nursingnas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:712971266338:android:b9dce4cbc8a5df9876dd7b",
+        "android_client_info": {
+          "package_name": "br.com.diego.nunsing_nas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "712971266338-md4rcgtig7mu0g8ba58csaaco9el77ab.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.diego.nunsing_nas",
+            "certificate_hash": "18cee06c5f19cc43920ec3717eb01ffc4460bd6a"
+          }
+        },
+        {
+          "client_id": "712971266338-72o8nn3od4l79r5bkt41n9liov5pjtcd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAy1k0rmBjouzFYh8s0vfJAx7kBXvh_2Pw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "712971266338-72o8nn3od4l79r5bkt41n9liov5pjtcd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

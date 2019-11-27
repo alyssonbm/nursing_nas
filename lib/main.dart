@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:nunsing_nas/ui/nas_home.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:nunsing_nas/services/authentication.dart';
+import 'package:nunsing_nas/ui/nas_root.dart';
 
 void main(){
 
-  Firestore.instance.collection("teste").document('teste').setData({"teste":"teste"});
-
   runApp(MaterialApp(
-    home: NasHome(),
+    title: "NAS - Enfermagem",
+    debugShowCheckedModeBanner: false,
+    home: NasRoot(auth: new Auth()),
   ));
 }

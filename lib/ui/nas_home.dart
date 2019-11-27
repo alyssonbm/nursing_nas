@@ -1,24 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:nunsing_nas/Class/paciente.dart';
 import 'dart:io';
+import 'package:nunsing_nas/services/authentication.dart';
 
 class NasHome extends StatefulWidget {
+  NasHome({Key key, this.auth, this.userId, this.logoutCallback}): super(key: key);
+
+  final BaseAuth auth;
+  final VoidCallback logoutCallback;
+  final String userId;
+
   @override
   _NasHomeState createState() => _NasHomeState();
 }
 
 class _NasHomeState extends State<NasHome> {
 
-  List<Paciente> patients = List(); 
+  List<Paciente> patients = List();
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+      return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text("NAS"),
         centerTitle: true,
         backgroundColor: Colors.blue,
+        actions: <Widget>[
+          new FlatButton(
+            child: new Text('Sair', style: new TextStyle(fontSize: 17.0, color: Colors.white),),
+            onPressed: signOut,
+          )
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: (){},
@@ -34,6 +47,7 @@ class _NasHomeState extends State<NasHome> {
       ),
     );
   }
+
 
   Widget _pacientCard(BuildContext context, int index){
     return GestureDetector(
@@ -71,6 +85,15 @@ class _NasHomeState extends State<NasHome> {
         ),
       ),
     );
+  }
+
+  signOut() async {
+    try {
+      await widget.auth.signOut();
+      widget.logoutCallback();
+    } catch (e) {
+      print(e);
+    }
   }
 
 }

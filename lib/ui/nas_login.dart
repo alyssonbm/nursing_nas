@@ -60,6 +60,9 @@ class _NasLoginState extends State<NasLogin> {
           widget.loginCallback();
         }
       } catch (e) {
+        setState(() {
+          _isLoading = false;
+        });
         print('Error: $e');
         setState(() {
           _isLoading = false;

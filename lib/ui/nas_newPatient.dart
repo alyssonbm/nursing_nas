@@ -19,7 +19,7 @@ class _newPatientState extends State<newPatient> {
 
   @override
   void initState(){
-    this.initState();
+    super.initState();
 
     if(widget.patient == null){
       _editedPatient = new Paciente();
@@ -39,7 +39,7 @@ class _newPatientState extends State<newPatient> {
       floatingActionButton: FloatingActionButton(
         onPressed: null,
         backgroundColor: Colors.blue,
-        child: Icon(Icons.save),
+        child: Icon(Icons.arrow_forward),
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(10.0),
@@ -54,22 +54,25 @@ class _newPatientState extends State<newPatient> {
                   // TODO: IMAGEM DO FIREBASE
                   image: DecorationImage(
                     image: _editedPatient.img != null ?
-                    AssetImage('images.png') : 
-                    AssetImage('images.png')
+                    AssetImage('images/person.png') : 
+                    AssetImage('images/person.png')
                   )
                 ),
               ),
             ),
-            TextField(
-              decoration: InputDecoration(
-                labelText: 'Nome',
+            Padding(
+              padding: EdgeInsets.all(20.0),
+              child: TextField(
+                decoration: InputDecoration(
+                  labelText: 'Nome',
+                ),
+                onChanged: (text){
+                  _userEdited = true;
+                  setState(() {
+                    _editedPatient.name = text;
+                  });
+                },
               ),
-              onChanged: (text){
-                _userEdited = true;
-                setState(() {
-                  _editedPatient.name = text;
-                });
-              },
             )
           ],
         ),

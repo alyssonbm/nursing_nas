@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nunsing_nas/Class/paciente.dart';
 import 'dart:io';
 import 'package:nunsing_nas/services/authentication.dart';
+import 'package:nunsing_nas/ui/nas_newPatient.dart';
 
 class NasHome extends StatefulWidget {
   NasHome({Key key, this.auth, this.userId, this.logoutCallback}): super(key: key);
@@ -34,7 +35,12 @@ class _NasHomeState extends State<NasHome> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: (){},
+        onPressed: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => newPatient())
+          );
+        },
         child: Icon(Icons.add),
         backgroundColor: Colors.blue,
       ),

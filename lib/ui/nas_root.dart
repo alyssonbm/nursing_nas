@@ -40,7 +40,7 @@ class _NasRootState extends State<NasRoot> {
 
   @override
   Widget build(BuildContext context) {
-    switch(authStatus) {
+    switch (authStatus) {
       case AuthStatus.NOT_DETERMINED:
         return buildWaitingScreen();
         break;
@@ -51,8 +51,8 @@ class _NasRootState extends State<NasRoot> {
         );
         break;
       case AuthStatus.LOGGED_IN:
-        if (_userId.length > 0 && _userId != null){
-          return NasHome(
+        if (_userId.length > 0 && _userId != null) {
+          return new NasHome(
             userId: _userId,
             auth: widget.auth,
             logoutCallback: logoutCallback,

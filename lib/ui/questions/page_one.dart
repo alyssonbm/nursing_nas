@@ -5,12 +5,13 @@ class pageOne extends StatefulWidget {
   _pageOneState createState() => _pageOneState();
 }
 
-enum SingingCharacter { one , two , tree }
+enum FirstQuestion { zero, one , two , tree }
 
 class _pageOneState extends State<pageOne> {
   
   int _radioValue1 = -1;
-  SingingCharacter _character = SingingCharacter.one;
+  bool comboBox1 = false;
+  FirstQuestion _character = FirstQuestion.zero;
   
   @override
   Widget build(BuildContext context) {
@@ -30,9 +31,15 @@ class _pageOneState extends State<pageOne> {
           Column(
             children: <Widget>[
               Container(
-                margin: EdgeInsets.only(top: 80.0),
+                margin: EdgeInsets.only(top: 50.0),
                 padding: EdgeInsets.fromLTRB(40.0, 20.0, 40.0, 20.0),
-                color: Colors.blue,
+                //color: Colors.blue,
+                decoration: new BoxDecoration(
+                  color: Colors.blue, //new Color.fromRGBO(255, 0, 0, 0.0),
+                  borderRadius: new BorderRadius.only(
+                    topLeft:  const  Radius.circular(40.0),
+                    topRight: const  Radius.circular(40.0))
+                ),
                 child: Text("1 - Monitorização e Controles", style: TextStyle(color: Colors.white, fontSize: 20.0),),
               ),
 
@@ -44,11 +51,12 @@ class _pageOneState extends State<pageOne> {
                   crossAxisAlignment:  CrossAxisAlignment.center,
                   children: <Widget>[
                     Radio(
-                      value: SingingCharacter.one,
+                      value: FirstQuestion.one,
                       groupValue: _character,
-                      onChanged: (SingingCharacter value) {
+                      onChanged: (FirstQuestion value) {
                         setState(() {
                           _character = value;
+                          _radioValue1 = 1;
                         });
                       },
                     ),
@@ -65,11 +73,12 @@ class _pageOneState extends State<pageOne> {
                   crossAxisAlignment:  CrossAxisAlignment.center,
                   children: <Widget>[
                     Radio(
-                      value: SingingCharacter.two,
+                      value: FirstQuestion.two,
                       groupValue: _character,
-                      onChanged: (SingingCharacter value) {
+                      onChanged: (FirstQuestion value) {
                         setState(() {
                           _character = value;
+                          _radioValue1 = 2;
                         });
                       },
                     ),
@@ -86,11 +95,12 @@ class _pageOneState extends State<pageOne> {
                   crossAxisAlignment:  CrossAxisAlignment.center,
                   children: <Widget>[
                     Radio(
-                      value: SingingCharacter.tree,
+                      value: FirstQuestion.tree,
                       groupValue: _character,
-                      onChanged: (SingingCharacter value) {
+                      onChanged: (FirstQuestion value) {
                         setState(() {
                           _character = value;
+                          _radioValue1 = 3;
                         });
                       },
                     ),
@@ -106,23 +116,29 @@ class _pageOneState extends State<pageOne> {
               Container(
                 margin: EdgeInsets.only(top: 20.0),
                 padding: EdgeInsets.fromLTRB(35.0, 0.0, 35.0, 0.0),
-                color: Colors.amber,
+                color: Colors.red[400],
                 child: Text("2 - Investigações Laboratoriais\nBioquimicas e Microbiológicas", style: TextStyle(color: Colors.white, fontSize: 20.0),),
               ),
 
               Container(
                 margin: EdgeInsets.fromLTRB(35.0, 0.0, 35.0, 0.0),
-                padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
-                color: Colors.amber[50],
+                padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 20.0),
+                decoration: new BoxDecoration(
+                  color: Colors.red[100],
+                  borderRadius: new BorderRadius.only(
+                    bottomLeft: const Radius.circular(40.0),
+                    bottomRight: const Radius.circular(40.0)
+                  )
+                ),
                 child: Row(
                   crossAxisAlignment:  CrossAxisAlignment.center,
                   children: <Widget>[
-                    Radio(
-                      value: SingingCharacter.tree,
-                      groupValue: _character,
-                      onChanged: (SingingCharacter value) {
+                    Checkbox(                    
+                      value: false,
+                      onChanged: (value) {
                         setState(() {
-                          _character = value;
+                          value = value;
+                          comboBox1 = value;
                         });
                       },
                     ),

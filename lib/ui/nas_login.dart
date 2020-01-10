@@ -132,10 +132,10 @@ class _NasLoginState extends State<NasLogin> {
     return Hero(
       tag: 'hero',
       child: Padding(
-        padding: EdgeInsets.fromLTRB(0.0, 70.0, 0.0, 0.0),
+        padding: EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 0.0),
         child: CircleAvatar(
           backgroundColor: Colors.transparent,
-          radius: 48.0,
+          radius: 100.0,
           child: Image.network('https://previews.123rf.com/images/lynxtime/lynxtime1511/lynxtime151101133/48384005-doctor-and-nurse-icon.jpg'),
         ),
       ),
@@ -144,7 +144,7 @@ class _NasLoginState extends State<NasLogin> {
 
   Widget showEmailInput(){
     return Padding(
-      padding: const EdgeInsets.fromLTRB(0.0, 100.0, 0.0, 0.0),
+      padding: const EdgeInsets.fromLTRB(0.0, 40.0, 0.0, 0.0),
       child: new TextFormField(
         maxLines: 1,
         keyboardType: TextInputType.emailAddress,

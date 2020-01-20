@@ -19,6 +19,6 @@ void main(){
     title: "NAS - Enfermagem",
     debugShowCheckedModeBanner: false,
     //home: NasRoot(auth: new Auth()),
-    home: pageNine(),
+    home: newPatient(),
   ));
 }

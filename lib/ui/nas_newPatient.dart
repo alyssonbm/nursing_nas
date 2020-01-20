@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nunsing_nas/Class/paciente.dart';
+import 'package:nunsing_nas/ui/questions/firstBlock/page_one.dart';
 
 class newPatient extends StatefulWidget {
 
@@ -37,7 +38,12 @@ class _newPatientState extends State<newPatient> {
         centerTitle: true,
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: null,
+        onPressed: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => pageOne(_editedPatient))
+          );
+        },
         backgroundColor: Colors.blue,
         child: Icon(Icons.arrow_forward),
       ),

@@ -17,7 +17,7 @@ class NasHome extends StatefulWidget {
 
 class _NasHomeState extends State<NasHome> {
 
-  List<Paciente> patients = List();
+  List<Paciente> patients = List();  
 
   @override
   Widget build(BuildContext context) {

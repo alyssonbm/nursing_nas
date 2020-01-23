@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nunsing_nas/Class/paciente.dart';
+import 'package:nunsing_nas/Class/size_config.dart';
 import 'dart:io';
 import 'package:nunsing_nas/services/authentication.dart';
 import 'package:nunsing_nas/ui/nas_newPatient.dart';
@@ -21,6 +22,7 @@ class _NasHomeState extends State<NasHome> {
 
   @override
   Widget build(BuildContext context) {
+      SizeConfig().init(context);
       return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -101,5 +103,4 @@ class _NasHomeState extends State<NasHome> {
       print(e);
     }
   }
-
 }

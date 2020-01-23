@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nunsing_nas/Class/paciente.dart';
+import 'package:nunsing_nas/Class/size_config.dart';
 import 'package:nunsing_nas/ui/questions/firstBlock/page_one.dart';
 
 class newPatient extends StatefulWidget {
@@ -31,6 +32,7 @@ class _newPatientState extends State<newPatient> {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
